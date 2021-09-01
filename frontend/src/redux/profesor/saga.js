@@ -4,8 +4,11 @@ import {
     GET_ALL_PROFESORES_START,
     GET_ALL_PROFESORES_COMPLETE,
     GET_ALL_PROFESORES_ERROR,
+    ADD_PROFESOR_START,
+    ADD_PROFESOR_COMPLETE,
+    ADD_PROFESOR_ERROR
 } from './type'
-import { getAll } from './service'
+import { getAll, add } from './service'
 
 export function* getAllProfesores() {
     try {
@@ -16,6 +19,15 @@ export function* getAllProfesores() {
     }
 }
 
+export function* addProfesor({ payload }) {
+    try {
+        const profesor = yield call(add, payload)
+        yield put({ type: ADD_PROFESOR_COMPLETE, profesor })
+    } catch (err) {
+        yield put({ type: ADD_PROFESOR_ERROR, err })
+    }
+}
 export default function* profesores() {
     yield takeLatest(GET_ALL_PROFESORES_START, getAllProfesores)
+    yield takeLatest(ADD_PROFESOR_START, addProfesor)
 }

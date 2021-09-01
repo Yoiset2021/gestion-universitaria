@@ -51,7 +51,7 @@ function ModalEstudiante(props) {
             }
             dispatch(cleanError())
         }
-    }, [status])
+    }, [dispatch, status])
 
     const handleChange = e => {
         const { name, value } = e.target

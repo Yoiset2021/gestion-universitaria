@@ -34,7 +34,7 @@ function SiderBar({ history, location }) {
                             data-background-color="blue"
                         >
                             <a href="/">
-                                <img to src="/svg/house.svg" alt="Home" width="32" height="32" style={{ fontSize: '1.75em' }} />
+                                <img to src="/svg/home.svg" alt="Home" width="32" height="32" style={{ fontSize: '1.75em' }} />
                             </a>
                             <ReactTooltip />
                         </NavIcon>
@@ -49,7 +49,7 @@ function SiderBar({ history, location }) {
                             data-background-color="blue"
                         >
                             <a href="/estudiantes">
-                                <img src="/svg/person.svg" alt="Estud" width="32" height="32" style={{ fontSize: '1.75em' }} />
+                                <img src="/svg/estudiante.svg" alt="Estud" width="32" height="32" style={{ fontSize: '1.75em' }} />
                             </a>
                             <ReactTooltip />
                         </NavIcon>
@@ -64,12 +64,42 @@ function SiderBar({ history, location }) {
                             data-background-color="blue"
                         >
                             <a href="/grupos">
-                                <img src="/svg/people.svg" alt="Grupos" width="32" height="32" style={{ fontSize: '1.75em' }} />
+                                <img src="/svg/group.svg" alt="Grupos" width="32" height="32" style={{ fontSize: '1.75em' }} />
                             </a>
                             <ReactTooltip />
                         </NavIcon>
                         <NavText>
                             Grupos
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="ciudades">
+                        <NavIcon
+                            data-tip="Ciudades"
+                            data-place="right"
+                            data-background-color="blue"
+                        >
+                            <a href="/ciudades">
+                                <img src="/svg/city.svg" alt="Ciudades" width="32" height="32" style={{ fontSize: '1.75em' }} />
+                            </a>
+                            <ReactTooltip />
+                        </NavIcon>
+                        <NavText>
+                            Ciudades
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="profesores">
+                        <NavIcon
+                            data-tip="Profesores"
+                            data-place="right"
+                            data-background-color="blue"
+                        >
+                            <a href="/profesores">
+                                <img src="/svg/teacher.svg" alt="Profesores" width="32" height="32" style={{ fontSize: '1.75em' }} />
+                            </a>
+                            <ReactTooltip />
+                        </NavIcon>
+                        <NavText>
+                            Profesores
                         </NavText>
                     </NavItem>
                 </SideNav.Nav>

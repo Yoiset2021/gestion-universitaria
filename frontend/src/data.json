@@ -1,0 +1,30 @@
+{
+    "ciudades": [
+      {
+        "_id": 1,
+        "nombre": "Pinar del Rio"
+      },
+      {
+        "_id": 2,
+        "nombre": "Ciudad Habana"
+      },
+      {
+        "_id": 3,
+        "nombre": "Matanzas"
+      }
+    ],
+    "profesores": [
+        {
+            "_id": 1,
+            "nombre": "Juan Perez"
+          },
+          {
+            "_id": 2,
+            "nombre": "Pedro Alvarez"
+          },
+          {
+            "_id": 3,
+            "nombre": "Manolo Lama"
+          }
+    ]
+  }

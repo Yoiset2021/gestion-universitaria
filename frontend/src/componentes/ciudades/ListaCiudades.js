@@ -4,28 +4,23 @@ import 'react-toastify/dist/ReactToastify.css'
 import ReactTooltip from 'react-tooltip'
 import { Button } from 'react-bootstrap'
 
-import ModalGrupo from "./ModalGrupo";
-import customHook from './useGrupos'
+import ModalCiudad from "./ModalCiudad";
+import customHook from './useCiudades'
 import Spinner from "../Spinner";
 import NoResultados from '../NoResultados'
 import Error from '../Error'
-import TablaGrupos from "./TablaGrupos";
+import TablaCiudad from "./TablaCiudad";
 
-function ListaGrupos() {
+function ListaCiudades() {
 
     const {
-        grupos,
-        grupo,
-        handleModalAddOpen,
-        handleModalAddClose,
-        handleModalEditClose,
+        ciudades,
+        handleModalOpen,
+        handleModalClose,
         errorGlobal,
         isOpen,
         isLoading,
-        notify,
-        setState,
-        state
-    } = customHook.useGrupos()
+    } = customHook.useCiudades()
 
     return (
         <>
@@ -35,10 +30,10 @@ function ListaGrupos() {
                     errorGlobal ? <Error /> :
                         <>
                             <div className="d-flex justify-content-between">
-                                <h3 className="text-start border-bottom border-3"> Grupos </h3>
+                                <h3 className="text-start border-bottom border-3"> Ciudades </h3>
                                 <Button
                                     type="button"
-                                    onClick={handleModalAddOpen}
+                                    onClick={handleModalOpen}
                                     className="btn btn-info rounded-circle border-dark btn-sm"
                                     data-tip="Adicionar"
                                 >
@@ -47,12 +42,9 @@ function ListaGrupos() {
                                 </Button>
                             </div>
                             {
-                                grupos.length ?
-                                    <TablaGrupos
-                                        grupos={grupos}
-                                        notify={notify}
-                                        setState={setState}
-                                        state={state}
+                                ciudades.length ?
+                                    <TablaCiudad
+                                        ciudades={ciudades}
                                     />
                                     :
                                     <NoResultados />
@@ -62,20 +54,9 @@ function ListaGrupos() {
 
                 {
                     isOpen && (
-                        <ModalGrupo
-                            onClose={handleModalAddClose}
+                        <ModalCiudad
+                            onClose={handleModalClose}
                             submitText='Crear'
-                        />
-                    )
-                }
-                {
-                    grupo && (
-                        <ModalGrupo
-                            onClose={handleModalEditClose}
-                            submitText='Actualizar'
-                            nombre={grupo.nombre}
-                            profesorGuia={grupo.profesorGuia && grupo.profesorGuia._id}
-                            grup_id={grupo._id}
                         />
                     )
                 }
@@ -84,4 +65,4 @@ function ListaGrupos() {
     );
 }
 
-export default ListaGrupos;
+export default ListaCiudades;

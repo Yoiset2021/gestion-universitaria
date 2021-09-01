@@ -20,6 +20,7 @@ export const deleteEstudiante = payload => ({
     type: DELETE_ESTUDIANTE_START,
     payload
 })
+
 export const cleanError = () => ({
     type: CLEAN_ERROR
 })

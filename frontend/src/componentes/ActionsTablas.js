@@ -15,7 +15,7 @@ function ActionsTablas(props) {
                     onClick={() => onModalEdit(props.data)}
                     data-tip="Editar"
                 >
-                    <img src="/svg/pencil-square.svg" alt="edit" width="16" height="16" />
+                    <img src="/svg/edit.svg" alt="edit" width="16" height="16" />
                 </Button>
                 <ReactTooltip />
                 <Button
@@ -24,7 +24,7 @@ function ActionsTablas(props) {
                     onClick={() => onDelete(props.data)}
                     data-tip="Eliminar"
                 >
-                    <img src="/svg/x-square.svg" alt="edit" width="16" height="16" />
+                    <img src="/svg/delete.svg" alt="edit" width="16" height="16" />
                 </Button>
                 <ReactTooltip />
             </div>

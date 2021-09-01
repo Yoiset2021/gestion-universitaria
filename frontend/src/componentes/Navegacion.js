@@ -12,7 +12,7 @@ function Navegacion() {
                     </Navbar.Brand>
                     <Button size="sm" variant="info" className="text-white">
                         <div className="d-flex justify-content-center">
-                            <img className="rounded-circle img-thumbnail" src="/svg/file-image.svg" alt="Adicionar" width="32" height="32" />
+                            <img className="rounded-circle img-thumbnail" src="/svg/file-person.svg" alt="Adicionar" width="32" height="32" />
                             <NavDropdown title="Yoiset" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/">Cerrar Session</NavDropdown.Item>
                             </NavDropdown>

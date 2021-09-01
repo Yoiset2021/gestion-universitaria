@@ -1,11 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import storeFn from './redux/store'
 
 import Layout from './componentes/layout'
 import ListaEstudiantes from './componentes/estudiantes/ListaEstudiantes'
 import ListaGrupos from './componentes/grupos/ListaGrupos'
+import ListaCiudades from './componentes/ciudades/ListaCiudades'
+import ListaProfesores from './componentes/profesores/ListaProfesores'
 import Home from './componentes/Home'
 
 const store = storeFn()
@@ -19,6 +21,8 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/estudiantes" component={ListaEstudiantes} />
             <Route path="/grupos" component={ListaGrupos} />
+            <Route path="/ciudades" component={ListaCiudades} />
+            <Route path="/profesores" component={ListaProfesores} />
           </Layout>
         </Switch>
       </BrowserRouter>

@@ -5,8 +5,7 @@ import Validator from 'validator'
 
 import {
     getAllGrupos,
-    handleSubmitGrupo,
-    deleteGrupo
+    handleSubmitGrupo
 } from '../../redux/grupo/action'
 import { getAllProfesores } from '../../redux/profesor/action'
 
@@ -15,10 +14,10 @@ function useGrupos() {
     //para abrir y cerrar modal, ya sea cuando actualizo o cuando creo
     const [state, setState] = useState({
         isOpen: false,
-        grupoId: null
+        grupoId: null,
     })
-    const [errors, setErrors] = useState({})
 
+    const [errors, setErrors] = useState({})
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -29,25 +28,19 @@ function useGrupos() {
     const profesores = useSelector(state => state.profesor.data)
     const grupos = useSelector(state => state.grupo.data)
     const isLoading = useSelector(state => state.grupo.isLoading)
-    const errorGlobal = useSelector(state => state.grupo.errorGlobal)
+    const errorGlobal = useSelector(state => state.grupo.error)
     const errorServer = useSelector(state => state.grupo.errorServer)
     const status = useSelector(state => state.grupo.status)
 
     const handleModalAddOpen = () => {
         setState({ ...state, isOpen: true })
-    }
-
+    };
     const handleModalAddClose = () => {
         setState({ ...state, isOpen: false })
-    }
+    };
 
     const handleModalEditClose = () => {
         setState({ ...state, grupoId: null })
-    }
-
-    const handleDelete = grupo => {
-        dispatch(deleteGrupo(grupo))
-        notify('eliminado')
     }
 
     const notify = text => {
@@ -74,9 +67,9 @@ function useGrupos() {
             errors.nombre = 'Nombre es requerido'
         }
         if (!grupo.profesorGuia) {
-            errors.profesor = 'Profesor es requerido'
+            errors.profeso = 'Profesor es requerido'
         } else if (!grupo.profesorGuia._id) {
-            errors.profesor = 'Selecciona un profesor valido'
+            errors.profeso = 'Selecciona un profesor valido'
         }
         return errors
     }
@@ -94,7 +87,6 @@ function useGrupos() {
         grupo,
         errorGlobal,
         isOpen,
-        handleDelete,
         handleModalAddOpen,
         handleModalAddClose,
         handleModalEditClose,

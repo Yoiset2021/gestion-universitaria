@@ -43,7 +43,7 @@ Se tiene que utilizar las tecnologías React/NodeJs o Python/Django. Siéntete l
 
 ## Backend
 
-    El backend consite en una api rest desarrollada con [Express JS](https://expressjs.com/es/) como framawork web de [Node JS](https://nodejs.org/en/) y se usó [Mongo DB](https://www.mongodb.com/es/) como sistema de base de datos haciendo uso del ODM [Mongoose](https://mongoosejs.com/).
+    El backend consite en una api rest desarrollada con [Express JS](https://expressjs.com/es) como framawork web de [Node JS](https://nodejs.org/en/) y se usó [Mongo DB](https://www.mongodb.com/es/) como sistema de base de datos haciendo uso del ODM [Mongoose](https://mongoosejs.com/).
 
 ### Módulos utilizados
 
@@ -58,7 +58,7 @@ Se tiene que utilizar las tecnologías React/NodeJs o Python/Django. Siéntete l
 
 ## Frontend
 
-    El frontend se desarrolló con la libreria javascript para la creación de interfases de usario [React JS](https://es.reactjs.org/).
+    El frontend se desarrolló con la libreria javascript para la creación de interfases de usuario [React JS](https://es.reactjs.org/).
 
 ### Módulos utilizados
 
