@@ -1,0 +1,80 @@
+.modalContainer {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+}
+
+.modalBox {
+  align-self: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 6px;
+  max-height: 600px;
+}
+
+.ag-row-hover .actionsButtons {
+  display: flex;
+  justify-content: flex-center;
+  width: 140px;
+}
+
+.ag-theme-alpine .ag-header-cell {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 17px;
+  /* identical to box height, or 155% */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  /* Blue gray 4 */
+  color: #f4f4f8;
+  background-color: hsl(184, 58%, 57%);
+}
+
+.ag-header-cell.ag-focus-managed::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 16px;
+  width: 1px;
+  height: 50%;
+  right: 0;
+  background: #557d91;
+}
+
+.ag-pinned-left-header {
+  border: none !important;
+}
+
+.ag-paging-panel {
+  background-color: #f4f7f9 !important;
+  height: 40px !important;
+  padding-right: calc(50% - 144px);
+}
+
+.ag-horizontal-left-spacer {
+  height: 0px !important;
+}
+
+.ag-standard-button {
+  font-weight: 500;
+}
+
+.ag-standard-button[ref="resetFilterButton"] {
+  color: var(--blue-gray-5) !important;
+}
+
+.ag-header-cell-sorted-asc {
+  color: var(--red-base) !important;
+}
