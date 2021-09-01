@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# Proyecto de prueba para Firedevs SpA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto consiste en la gestión de los estudiantes de una universidad, así como los grupos que pudieran ser asignados a dichos estudiantes. Está desarrollado con Node/ReactJS
 
-## Available Scripts
+## Estructura
 
-In the project directory, you can run:
+- [Problema a resolver](#problema-a-resolver)
+  - [Objetivo](#objetivo)
+  - [Requirements](#requirements)
+  - [Rutas](#rutas)
+- [Backend](#backend)
+  - [módulos utilizados](#modulos-utilizados)
+- [frontend](#frontend)
+  - [módulos utilizados](#modulos-utilizados)
+- [Ejecutar projecto en local](#ejecutar-projecto-en-local)
 
-### `npm start`
+## Problema a resolver:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Objetivo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+El objetivo de este proyecto será crear una aplicación web que permita gestionar los estudiantes de una universidad, asi como los grupos a los que pueden pertenecer dichos estudiantes.
 
-### `npm test`
+En una universidad se desea administrar a los estudiantes.
+Cada estudiante tiene edad, sexo, nombre, email, fecha de nacimiento , ciudad de
+nacimiento y grupo.
+Existen grupos que contienen una lista de estudiantes. El grupo tiene: nombre, profesor guía.
+Realizar un sistema con un CRUD de grupos y estudiantes.
+En el formulario del grupo debe aparecer un selector de profesores.
+En el formulario de estudiantes debe aparecer un selector de grupos disponibles y un
+selector de las ciudades.
+Realice las correspondientes validaciones para el tipo de dato que lo requiera. Ex: edad, email
+etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requerimientos
 
-### `npm run build`
+Se tiene que utilizar las tecnologías React/NodeJs o Python/Django. Siéntete libre de usar las bibliotecas y las prácticas que estimes. Nos interesa mucho tu creatividad.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Rutas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- una ruta para la página principal
+- Una ruta para los estudiantes
+- Una ruta para los grupos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Backend
 
-### `npm run eject`
+    El backend consite en una api rest desarrollada con [Express JS](https://expressjs.com/es/) como framawork web de [Node JS](https://nodejs.org/en/) y se usó [Mongo DB](https://www.mongodb.com/es/) como sistema de base de datos haciendo uso del ODM [Mongoose](https://mongoosejs.com/).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Módulos utilizados
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-cors: v2.8.5 permite el intercambio de datos de los dos servidores
+-date-fns: v2.23.0 permite el trabajo con fechas
+-express: v4.17.1 framework web que permite el desarrollo de la api
+-express-promise-router: v4.1.0 permite el manejo de las rutas
+-mongoose: v5.13.8, permite el trabajo con los datos en la base de datos
+-morgan: v1.10.0" middleware que permite la captura de solicitudes HTTP
+-concurrently: v6.2.1" permite ejecutar los dos servidores en un solo script
+-nodemon: v2.0.12" permite que se reinicie el servidor cada vez que se haga un cambio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Frontend
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    El frontend se desarrolló con la libreria javascript para la creación de interfases de usario [React JS](https://es.reactjs.org/).
 
-## Learn More
+### Módulos utilizados
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - ag-grid-react: v26.0.0, datatable que permite el trabajo con tablas de manera mas rapida
+    - axios: v0.21.1, para consumir nuetra nuestra api
+    - bootstrap: v5.1.0, para la creación de nuestras vistas
+    - bootstrap-icons: v1.5.0, para la utilizacion de iconos
+    - date-fns : v2.23.0, para el trabajo con las fechas
+    - react-bootstrap: v1.6.1, para la creacion de las vistas
+    - react-reveal: v1.2.2, para los efectos de animación
+    - react-router-dom: v5.2.0, para el manejo de las rutas
+    - react-toastify: v7.0.4, para el manejo de mensajes
+    - react-tooltip: v4.2.21, para el mejor entendimiento de la aplicación
+    - redux: v4.1.1", para el manejo de el estado global de nuestra aplicación
+    - redux-saga: v1.1.3, como middleware de redux
+    - validator: v13.6.0v, para el trabajo con las validaciones en formularios
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Ejecutar projecto en local
 
-### Code Splitting
+Antes de comenzar, asegúrese de haber instalado estas herramientas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Node JS](https://nodejs.org/en/) - Versión LTS o más reciente..
+- [NPM](https://www.npmjs.com/) – Normalmente viene con Node.
+- [Git](https://git-scm.com/) – CLI de Git..
 
-### Analyzing the Bundle Size
+Para asegurarse de tener esta herramienta instalada, abra una terminal y escriba:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+node --version
+```
 
-### Making a Progressive Web App
+```
+npm --version
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+git --version
+```
 
-### Advanced Configuration
+esperando algo similar a (o versiones más nuevas):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+node --version v14.17.0
+```
 
-### Deployment
+```
+npm --version 6.14.13
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+git --version 2.23.0
+```
 
-### `npm run build` fails to minify
+Una vez que haya instalado `node` `npm` y `git`, puede descargar/instalar este proyecto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+git clon https://github.com/Yoiset2021/gestion-universitaria.git
+cd gestion-universitaria
+npm install
+npm start
+```
+
+Después abra [http://localhost:3000](http://localhost:3000) para verlo en el navegador
