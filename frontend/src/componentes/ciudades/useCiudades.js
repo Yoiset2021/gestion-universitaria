@@ -57,6 +57,8 @@ function useCiudades() {
         const errors = {}
         if (Validator.isEmpty(ciudad.nombre)) {
             errors.nombre = 'Nombre es requerido'
+        } else if (!Validator.isAlpha(ciudad.nombre)) {
+            errors.nombre = 'El nombre solo puede tener letras'
         }
         return errors
     }

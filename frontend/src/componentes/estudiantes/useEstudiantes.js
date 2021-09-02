@@ -74,12 +74,16 @@ function useEstudiantes() {
         const errors = {}
         if (Validator.isEmpty(estudiante.nombre)) {
             errors.nombre = 'Nombre es requerido'
+        } else if (!Validator.isAlpha(estudiante.nombre)) {
+            errors.nombre = 'El nombre solo puede tener letras'
         }
         if (Validator.isEmpty(estudiante.sexo)) {
             errors.sexo = 'Sexo es requerido'
         }
         if (!estudiante.edad) {
             errors.edad = 'Edad es requerido'
+        } else if (Validator.isInt(estudiante.edad)) {
+            errors.edad = 'Edad solo admite numeros'
         }
         if (Validator.isEmpty(estudiante.fechaNacimiento)) {
             errors.fechaNacimiento = 'Fecha de nacimiento es requerido'

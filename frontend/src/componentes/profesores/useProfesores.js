@@ -57,6 +57,8 @@ function useProfesores() {
         const errors = {}
         if (Validator.isEmpty(profesor.nombre)) {
             errors.nombre = 'Nombre es requerido'
+        } else if (!Validator.isAlpha(profesor.nombre)) {
+            errors.nombre = 'El nombre solo puede tener letras'
         }
         return errors
     }
