@@ -65,19 +65,20 @@ El frontend se desarrolló con la libreria javascript para la creación de inter
 
 ### Módulos utilizados
 
--ag-grid-react: v26.0.0, datatable que permite el trabajo con tablas de manera mas rapida
--axios: v0.21.1, para consumir nuetra nuestra api
--bootstrap: v5.1.0, para la creación de nuestras vistas
--bootstrap-icons: v1.5.0, para la utilizacion de iconos
--date-fns : v2.23.0, para el trabajo con las fechas
--react-bootstrap: v1.6.1, para la creacion de las vistas
--react-reveal: v1.2.2, para los efectos de animación
--react-router-dom: v5.2.0, para el manejo de las rutas
--react-toastify: v7.0.4, para el manejo de mensajes
--react-tooltip: v4.2.21, para el mejor entendimiento de la aplicación
--redux: v4.1.1", para el manejo de el estado global de nuestra aplicación
--redux-saga: v1.1.3, como middleware de redux
--validator: v13.6.0v, para el trabajo con las validaciones en formularios
+- ag-grid-react: v26.0.0, datatable que permite el trabajo con tablas de manera mas rapida
+- axios: v0.21.1, para consumir nuetra nuestra api
+- bootstrap: v5.1.0, para la creación de nuestras vistas
+- bootstrap-icons: v1.5.0, para la utilizacion de iconos
+- date-fns : v2.23.0, para el trabajo con las fechas
+- react-bootstrap: v1.6.1, para la creacion de las vistas
+- react-reveal: v1.2.2, para los efectos de animación
+- react-router-dom: v5.2.0, para el manejo de las rutas
+- react-toastify: v7.0.4, para el manejo de mensajes
+- react-tooltip: v4.2.21, para el mejor entendimiento de la aplicación
+- redux: v4.1.1", para el manejo de el estado global de nuestra aplicación
+- redux-saga: v1.1.3, como middleware de redux
+- validator: v13.6.0, para el trabajo con las validaciones en formularios
+- prop-types: v15.7.2, para verificar los tipos de las props de los componentes
 
 ## Ejecutar projecto en local
 
@@ -126,8 +127,8 @@ npm start
 
 ## Vista al proyecto
 
-! [<img alt="Estudiantes" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/estudintes.jpg" width="100%"/>]()
-! [<img alt="Grupos" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/grupos.jpg" width="100%"/>Grupos]()
+[<img alt="Estudiantes" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/estudintes.jpg" width="100%"/>]()
+[<img alt="Grupos" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/grupos.jpg" width="100%"/>]()
 
 ## Nota
 
