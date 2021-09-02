@@ -126,9 +126,8 @@ npm start
 
 ## Vista al proyecto
 
-[<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.gif" width="100%" />](https://code-test-gitfast.web.app/)
-! [Estudiantes](frontend/public/img/estudintes.jpg)
-! [Grupos](frontend/public/img/grupos.jpg)
+! [Estudiantes](<img alt="Estudiantes" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/estudintes.jpg" width="60%" eigth="40%"/>)
+! [Grupos](https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/grupos.jpg)
 
 ## Nota
 
