@@ -102,7 +102,7 @@ function TablaEstudiantes(props) {
                     flex={1}
                     cellRenderer="actionsTablas"
                     cellRendererParams={{
-                        onModalEdit: handleModalEditOpen,
+                        onModalEditOpen: handleModalEditOpen,
                         onDelete: handleDelete,
                     }}
                 ></AgGridColumn>

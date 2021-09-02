@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ReactTooltip from 'react-tooltip'
 import { Button } from 'react-bootstrap'
+import { Zoom } from 'react-reveal'
 
 import ModalEstudiante from "./ModalEstudiante";
 import customHook from './useEstudiantes'
@@ -42,24 +43,25 @@ function ListaEstudiantes() {
                                     className="btn btn-info rounded-circle border-dark btn-sm"
                                     data-tip="Adicionar"
                                     data-place="right"
-                                    data-background-color="blue"
+                                    data-type="info"
                                 >
                                     <ReactTooltip />
                                     <img src="/svg/plus.svg" alt="Adicionar" width="32" height="32" />
                                 </Button>
                             </div>
-
-                            {
-                                estudiantes.length ?
-                                    <TablaEstudiantes
-                                        estudiantes={estudiantes}
-                                        notify={notify}
-                                        setState={setState}
-                                        state={state}
-                                    />
-                                    :
-                                    <NoResultados />
-                            }
+                            <Zoom>
+                                {
+                                    estudiantes.length ?
+                                        <TablaEstudiantes
+                                            estudiantes={estudiantes}
+                                            notify={notify}
+                                            setState={setState}
+                                            state={state}
+                                        />
+                                        :
+                                        <NoResultados />
+                                }
+                            </Zoom>
                         </>
                 }
 
@@ -67,7 +69,6 @@ function ListaEstudiantes() {
                     <ModalEstudiante
                         onClose={handleModalAddClose}
                         submitText='Crear'
-
                     />
                 }
                 {estudiante &&

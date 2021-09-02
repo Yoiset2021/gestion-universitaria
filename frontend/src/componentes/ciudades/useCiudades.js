@@ -17,7 +17,9 @@ function useCiudades() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllCiudades())
+        if (!ciudades.length) {
+            dispatch(getAllCiudades())
+        }
     }, [dispatch])
 
     const ciudades = useSelector(state => state.ciudad.data)

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { Container, Card, Button, Form } from 'react-bootstrap'
 
 import MensajeError from '../MensajeError'
-import hook from '../grupos/useGrupos'
+import useGrupos from '../grupos/useGrupos'
 import { cleanError } from '../../redux/grupo/action'
 
 function ModalGrupo(props) {
@@ -16,7 +16,7 @@ function ModalGrupo(props) {
         profesores,
         status,
         notify
-    } = hook.useGrupos()
+    } = useGrupos()
 
     const dispatch = useDispatch()
 
@@ -35,12 +35,12 @@ function ModalGrupo(props) {
                 notify('creado')
             }
             else {
-                props.onClose()
                 notify('actualizado')
+                props.onClose()
             }
             dispatch(cleanError())
         }
-    }, [dispatch, status])
+    }, [status])
 
     const handleChange = e => {
         const { name, value } = e.target

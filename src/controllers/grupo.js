@@ -60,7 +60,7 @@ module.exports = {
             /*si tiene estudiantes le quito el grupo */
             if (estudiantes.length) {
                 estudiantes.forEach(async (estudiante) => {
-                    await Estudiante.findOneAndUpdate({ _id: estudiante._id, $unset: { "grupo": "" } }, { new: true })
+                    await Estudiante.findOneAndUpdate({ _id: estudiante._id }, { $unset: { "grupo": "" } }, { new: true })
                 })
             }
             res.status(200).json(grupo_delete)

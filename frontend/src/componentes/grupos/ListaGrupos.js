@@ -3,13 +3,14 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ReactTooltip from 'react-tooltip'
 import { Button } from 'react-bootstrap'
+import { Zoom } from 'react-reveal'
 
 import ModalGrupo from "./ModalGrupo";
-import customHook from './useGrupos'
+import useGrupos from './useGrupos'
 import Spinner from "../Spinner";
 import NoResultados from '../NoResultados'
 import Error from '../Error'
-import TablaGrupos from "./TablaGrupos";
+import TablaGrupos from "./TablaGrupos"
 
 function ListaGrupos() {
 
@@ -18,14 +19,13 @@ function ListaGrupos() {
         grupo,
         handleModalAddOpen,
         handleModalAddClose,
+        handleModalEditOpen,
         handleModalEditClose,
         errorGlobal,
         isOpen,
         isLoading,
-        notify,
-        setState,
-        state
-    } = customHook.useGrupos()
+        notify
+    } = useGrupos()
 
     return (
         <>
@@ -41,43 +41,43 @@ function ListaGrupos() {
                                     onClick={handleModalAddOpen}
                                     className="btn btn-info rounded-circle border-dark btn-sm"
                                     data-tip="Adicionar"
+                                    data-type="info"
                                 >
                                     <ReactTooltip />
                                     <img src="/svg/plus.svg" alt="Adicionar" width="32" height="32" />
                                 </Button>
                             </div>
-                            {
-                                grupos.length ?
-                                    <TablaGrupos
-                                        grupos={grupos}
-                                        notify={notify}
-                                        setState={setState}
-                                        state={state}
-                                    />
-                                    :
-                                    <NoResultados />
-                            }
+                            <Zoom>
+                                {
+                                    grupos.length ?
+                                        <TablaGrupos
+                                            grupos={grupos}
+                                            notify={notify}
+                                            handleModalEditOpen={handleModalEditOpen}
+                                        />
+                                        :
+                                        <NoResultados />
+                                }
+                            </Zoom>
                         </>
                 }
 
-                {
-                    isOpen && (
-                        <ModalGrupo
-                            onClose={handleModalAddClose}
-                            submitText='Crear'
-                        />
-                    )
+                {isOpen &&
+                    <ModalGrupo
+                        onClose={handleModalAddClose}
+                        submitText='Crear'
+                    />
+
                 }
-                {
-                    grupo && (
-                        <ModalGrupo
-                            onClose={handleModalEditClose}
-                            submitText='Actualizar'
-                            nombre={grupo.nombre}
-                            profesorGuia={grupo.profesorGuia && grupo.profesorGuia._id}
-                            grup_id={grupo._id}
-                        />
-                    )
+                {grupo &&
+                    <ModalGrupo
+                        onClose={handleModalEditClose}
+                        submitText='Actualizar'
+                        nombre={grupo.nombre}
+                        profesorGuia={grupo.profesorGuia && grupo.profesorGuia._id}
+                        grup_id={grupo._id}
+                    />
+
                 }
             </div>
         </>

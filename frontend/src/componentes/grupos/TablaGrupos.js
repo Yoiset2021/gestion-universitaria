@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { deleteGrupo } from '../../redux/grupo/action'
 import ActionsTablas from '../ActionsTablas'
+import ActionShow from './ActionShow'
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
@@ -12,16 +13,11 @@ function TablaGrupos(props) {
     const dispatch = useDispatch()
 
     const handleDelete = grupo => {
-        const { notify } = props
         dispatch(deleteGrupo(grupo))
         notify('eliminado')
     }
 
-    const handleModalEditOpen = grupo => {
-        const { state, setState } = props
-        setState({ ...state, grupoId: grupo._id })
-    }
-    const { grupos } = props
+    const { notify, grupos, handleModalEditOpen } = props
     const pagination = true
     const paginationPageSize = 4
 
@@ -31,27 +27,34 @@ function TablaGrupos(props) {
                 rowData={grupos}
                 pagination={pagination}
                 paginationPageSize={paginationPageSize}
-                frameworkComponents={{ actionsTablas: ActionsTablas }}
+                frameworkComponents={{ actionShow: ActionShow, actionsTablas: ActionsTablas }}
             >
                 <AgGridColumn
                     headerName="Nombre"
                     field="nombre"
-                    flex={4}
+                    flex={3}
                     sortable={true}
                     filter={true}>
                 </AgGridColumn>
                 <AgGridColumn
                     headerName="Profesor Guia"
                     field="profesorGuia.nombre"
-                    flex={4}
+                    flex={3}
                     sortable={true}
-                    filter={true}></AgGridColumn>
+                    filter={true}>
+                </AgGridColumn>
+                <AgGridColumn
+                    headerName="Estudiantes"
+                    flex={3}
+                    cellRenderer="actionShow"
+                >
+                </AgGridColumn>
                 <AgGridColumn
                     headerName="Acciones"
-                    flex={4}
+                    flex={3}
                     cellRenderer="actionsTablas"
                     cellRendererParams={{
-                        onModalEdit: handleModalEditOpen,
+                        onModalEditOpen: handleModalEditOpen,
                         onDelete: handleDelete,
                     }}
                 ></AgGridColumn>

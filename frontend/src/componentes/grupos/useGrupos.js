@@ -14,15 +14,18 @@ function useGrupos() {
     //para abrir y cerrar modal, ya sea cuando actualizo o cuando creo
     const [state, setState] = useState({
         isOpen: false,
-        grupoId: null,
+        grupo: null
     })
-
     const [errors, setErrors] = useState({})
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllGrupos())
-        dispatch(getAllProfesores())
+        if (!grupos.length) {
+            dispatch(getAllGrupos())
+        }
+        if (!profesores.length) {
+            dispatch(getAllProfesores())
+        }
     }, [dispatch])
 
     const profesores = useSelector(state => state.profesor.data)
@@ -38,10 +41,12 @@ function useGrupos() {
     const handleModalAddClose = () => {
         setState({ ...state, isOpen: false })
     };
-
+    const handleModalEditOpen = group => {
+        setState({ ...state, grupo: group })
+    };
     const handleModalEditClose = () => {
-        setState({ ...state, grupoId: null })
-    }
+        setState({ ...state, grupo: null })
+    };
 
     const notify = text => {
         toast.success(`Se ha ${text} el grupo correctamente`, {
@@ -78,30 +83,25 @@ function useGrupos() {
         await dispatch(handleSubmitGrupo(grupo))
     }
 
-    const { grupoId, isOpen } = state
-    const grupo = grupos.find(g => g._id === grupoId)
+    const { grupo, isOpen } = state
 
     return {
         isLoading,
         grupos,
-        grupo,
+        errorServer,
+        profesores,
         errorGlobal,
+        status,
+        grupo,
         isOpen,
         handleModalAddOpen,
         handleModalAddClose,
+        handleModalEditOpen,
         handleModalEditClose,
         notify,
-        setState,
-        state,
         handleSubmit,
         errors,
-        errorServer,
-        profesores,
-        status
     }
 }
-const exportFunction = {
-    useGrupos
-};
 
-export default exportFunction;
+export default useGrupos;

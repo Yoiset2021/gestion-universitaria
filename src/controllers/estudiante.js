@@ -72,6 +72,7 @@ module.exports = {
             }
             if (data.email) {
                 if (estudiante_update.email !== data.email) {
+                    //busco el estudiante para verificar que no exista en la bd
                     const estudiante_validate = await Estudiante.findOne({ email: data.email })
                     if (!estudiante_validate) {
                         estudiante_update.email = data.email
@@ -85,27 +86,42 @@ module.exports = {
                     estudiante_update.ciudad = data.ciudad
                 }
             }
-            /* if (estudiante_update.fechaNacimiento !== data.fechaNacimiento) {
-                estudiante_update.fechaNacimiento = data.fechaNacimiento
-            }*/
+            if (data.fechaNacimiento) {
+                // formateo la fecha que viene en el request
+                const fecha_data = format(new Date(data.fechaNacimiento), 'yyyyMMdd')
+                // formateo la fecha que tiene el estudiante
+                const fecha_estudiante = format(new Date(estudiante_update.fechaNacimiento), 'yyyyMMdd')
+                //comparo las dos fechas para si son diferentes cambiarla 
+                if (fecha_data !== fecha_estudiante) {
+                    // formateo la fecha actual
+                    const date_now = format(new Date(Date.now()), 'yyyyMMdd')
+                    // compruebo que no introduzca una fecha superior a la actual
+                    if (fecha_data > date_now) {
+                        res.status(400).json({ error: { fecha_server: 'No puede ingresar una fecha porterior a la actual' } })
+                    } else {
+                        estudiante_update.fechaNacimiento = data.fechaNacimiento
+                    }
+                }
+            }
             if (data.grupo) {
                 // verifico que el alumno que estoy actualizando tenga un grupo 
                 if (grupo._id) {
                     // comparo el grupo que viene en el request con el que tenia 
                     if (!grupo._id.equals(data.grupo._id)) {
-                        // al cambiarlo de grupo, pimero asigno al estudiante el nuevo grupo 
+                        // cambio de grupo 
+                        // busco el grupo que tenia,busco la posicion del alumno y lo quito
+                        const grupo_antiguo = await Grupo.findOne({ _id: grupo._id })
+                        const index = grupo_antiguo.estudiantes.indexOf(estudiante_update)
+                        grupo_antiguo.estudiantes.splice(index, 1)
+                        await grupo_antiguo.save()
+
+                        // asigo el nuevo grupo al estudiante
                         estudiante_update.grupo = data.grupo
+
                         // busco el grupo nuevo y le adiciono el estudiante
                         const grupo_new = await Grupo.findOne({ _id: data.grupo._id })
                         grupo_new.estudiantes.push(estudiante_update)
                         await grupo_new.save()
-                        // busco el grupo que tenia para quitarle el estudiante al arreglo
-                        const grupo_antiguo = await Grupo.findOne({ _id: grupo._id })
-                        // busco la posicion del alumno en arreglo
-                        const index = grupo_antiguo.estudiantes.indexOf(estudiante_update._id)
-                        //elimino el estudiante del grupo antiguo
-                        grupo_antiguo.estudiantes.splice(index, 1)
-                        await grupo_antiguo.save()
                     }
                 } else {
                     // si el estudiante no tenia un grupo, le asigno el que viene en el request 

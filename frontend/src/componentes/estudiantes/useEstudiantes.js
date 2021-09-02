@@ -21,9 +21,15 @@ function useEstudiantes() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllEstudiantes())
-        dispatch(getAllCiudades())
-        dispatch(getAllGrupos())
+        if (!estudiantes.length) {
+            dispatch(getAllEstudiantes())
+        }
+        if (!ciudades.length) {
+            dispatch(getAllCiudades())
+        }
+        if (!grupos.length) {
+            dispatch(getAllGrupos())
+        }
     }, [dispatch])
 
     const ciudades = useSelector(state => state.ciudad.data)
@@ -37,6 +43,7 @@ function useEstudiantes() {
     const handleModalAddOpen = () => {
         setState({ ...state, isOpen: true })
     };
+
     const handleModalAddClose = () => {
         setState({ ...state, isOpen: false })
     };

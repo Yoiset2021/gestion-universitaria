@@ -4,7 +4,7 @@ import ReactTooltip from 'react-tooltip'
 
 function ActionsTablas(props) {
 
-    const { onModalEdit, onDelete } = props
+    const { onModalEditOpen, onDelete } = props
 
     return (
         <Container>
@@ -12,7 +12,7 @@ function ActionsTablas(props) {
                 <Button
                     variant="primary"
                     className="mr-2 rounded-circle border-dark"
-                    onClick={() => onModalEdit(props.data)}
+                    onClick={() => onModalEditOpen(props.data)}
                     data-tip="Editar"
                 >
                     <img src="/svg/edit.svg" alt="edit" width="16" height="16" />

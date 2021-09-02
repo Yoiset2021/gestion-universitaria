@@ -8,6 +8,7 @@ import ListaEstudiantes from './componentes/estudiantes/ListaEstudiantes'
 import ListaGrupos from './componentes/grupos/ListaGrupos'
 import ListaCiudades from './componentes/ciudades/ListaCiudades'
 import ListaProfesores from './componentes/profesores/ListaProfesores'
+import ListaEstudiantesPorGrupo from './componentes/grupos/EstudiantesPorGrupo'
 import Home from './componentes/Home'
 
 const store = storeFn()
@@ -20,7 +21,8 @@ function App() {
           <Layout>
             <Route exact path="/" component={Home} />
             <Route path="/estudiantes" component={ListaEstudiantes} />
-            <Route path="/grupos" component={ListaGrupos} />
+            <Route path="/grupos/:id/estudiantes" component={ListaEstudiantesPorGrupo} />
+            <Route exact path="/grupos" component={ListaGrupos} />
             <Route path="/ciudades" component={ListaCiudades} />
             <Route path="/profesores" component={ListaProfesores} />
           </Layout>

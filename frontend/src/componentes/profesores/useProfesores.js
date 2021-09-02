@@ -17,7 +17,9 @@ function useProfesores() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllProfesores())
+        if (!profesores.length) {
+            dispatch(getAllProfesores())
+        }
     }, [dispatch])
 
     const profesores = useSelector(state => state.profesor.data)
