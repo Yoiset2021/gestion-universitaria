@@ -129,8 +129,5 @@ function useEstudiantes() {
         status
     }
 }
-const exportFunction = {
-    useEstudiantes
-};
 
-export default exportFunction;
+export default useEstudiantes;

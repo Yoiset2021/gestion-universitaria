@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { useDispatch } from 'react-redux'
 import { format } from 'date-fns'
+import PropTypes from 'prop-types'
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import ActionsTablas from '../ActionsTablas'
 import { deleteEstudiante } from '../../redux/estudiante/action'
 
-function TablaEstudiantes(props) {
+export default function TablaEstudiantes(props) {
 
     const [localArray, setLocalArray] = useState([])
     const dispatch = useDispatch()
@@ -111,5 +112,10 @@ function TablaEstudiantes(props) {
     )
 }
 
-export default TablaEstudiantes
+TablaEstudiantes.propTypes = {
+    estudiantes: PropTypes.arrayOf(PropTypes.object).isRequired,
+    notify: PropTypes.func.isRequired,
+    setState: PropTypes.func.isRequired,
+    state: PropTypes.object.isRequired
+}
 

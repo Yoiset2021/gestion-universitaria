@@ -1,5 +1,6 @@
 import React from 'react'
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import PropTypes from 'prop-types'
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -26,6 +27,10 @@ function TablaCiudad({ ciudades }) {
             </AgGridReact>
         </div>
     )
+}
+
+TablaCiudad.propTypes = {
+    ciudades: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default TablaCiudad

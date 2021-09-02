@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { Container, Card, Button, Form } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 import MensajeError from '../MensajeError'
-import hook from '../estudiantes/useEstudiantes'
+import useEstudiantes from '../estudiantes/useEstudiantes'
 import { cleanError } from '../../redux/estudiante/action'
 
-function ModalEstudiante(props) {
+export default function ModalEstudiante(props) {
 
     const {
         handleSubmit,
@@ -17,7 +18,7 @@ function ModalEstudiante(props) {
         grupos,
         status,
         notify
-    } = hook.useEstudiantes()
+    } = useEstudiantes()
 
     const dispatch = useDispatch()
 
@@ -167,4 +168,15 @@ function ModalEstudiante(props) {
         </div>, document.getElementById('modal'))
 }
 
-export default ModalEstudiante
+ModalEstudiante.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    submitText: PropTypes.string.isRequired,
+    nombre: PropTypes.string.isRequired,
+    edad: PropTypes.number.isRequired,
+    sexo: PropTypes.string.isRequired,
+    fechaNacimiento: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    ciudad: PropTypes.object,
+    grupo: PropTypes.object,
+    estud_id: PropTypes.string
+}

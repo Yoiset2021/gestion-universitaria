@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { Container, Card, Button, Form } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 import MensajeError from '../MensajeError'
 import useGrupos from '../grupos/useGrupos'
 import { cleanError } from '../../redux/grupo/action'
 
-function ModalGrupo(props) {
+export default function ModalGrupo(props) {
 
     const {
         handleSubmit,
@@ -114,4 +115,10 @@ function ModalGrupo(props) {
         </div>, document.getElementById('modal'));
 }
 
-export default ModalGrupo;
+ModalGrupo.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    submitText: PropTypes.string.isRequired,
+    nombre: PropTypes.string.isRequired,
+    profesorGuia: PropTypes.object,
+    grup_id: PropTypes.string
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import ReactDOM from 'react-dom'
 import { Container, Card, Button, Form } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
 import MensajeError from '../MensajeError'
 import hook from '../profesores/useProfesores'
@@ -81,6 +82,11 @@ function ModalProfesor({ submitText, onClose }) {
                 </Container>
             </div>
         </div>, document.getElementById('modal'));
+}
+
+ModalProfesor.propTypes = {
+    submitText: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired
 }
 
 export default ModalProfesor;

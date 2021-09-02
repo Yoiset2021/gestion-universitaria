@@ -5,21 +5,26 @@ const { ObjectId } = Schema
 
 const estudianteSchema = new Schema({
     nombre: {
-        type: String
+        type: String,
+        required: true
     },
     edad: {
-        type: Number
+        type: Number,
+        required: true
     },
     sexo: {
-        type: String
+        type: String,
+        required: true
     },
     email: {
         type: String,
         indexes: { unique: true },
-        lowercase: true
+        lowercase: true,
+        required: true
     },
     fechaNacimiento: {
-        type: Date
+        type: Date,
+        required: true
     },
     ciudad: {
         _id: {

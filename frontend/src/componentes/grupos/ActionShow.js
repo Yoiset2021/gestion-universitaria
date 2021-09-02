@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap'
 import ReactTooltip from 'react-tooltip'
+import PropTypes from 'prop-types'
 
-function ActionShow(props) {
+export default function ActionShow(props) {
 
     return (
         <Container>
@@ -24,4 +25,6 @@ function ActionShow(props) {
     )
 }
 
-export default ActionShow
+ActionShow.propTypes = {
+    _id: PropTypes.string.isRequired
+}

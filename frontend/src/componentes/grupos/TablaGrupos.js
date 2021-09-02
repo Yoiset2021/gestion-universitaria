@@ -1,6 +1,7 @@
 import React from 'react'
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { deleteGrupo } from '../../redux/grupo/action'
 import ActionsTablas from '../ActionsTablas'
@@ -8,7 +9,7 @@ import ActionShow from './ActionShow'
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
-function TablaGrupos(props) {
+export default function TablaGrupos(props) {
 
     const dispatch = useDispatch()
 
@@ -63,4 +64,8 @@ function TablaGrupos(props) {
     )
 }
 
-export default TablaGrupos
+TablaGrupos.propTypes = {
+    grupos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    notify: PropTypes.func.isRequired,
+    handleModalEditOpen: PropTypes.func.isRequired,
+}

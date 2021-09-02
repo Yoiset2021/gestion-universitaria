@@ -40,10 +40,13 @@ Se tiene que utilizar las tecnologías React/NodeJs o Python/Django. Siéntete l
 - una ruta para la página principal
 - Una ruta para los estudiantes
 - Una ruta para los grupos
+- Una ruta para los profesores
+- Una ruta para las ciudades
+- Una ruta para los estdiantes por grupo
 
 ## Backend
 
-    El backend consite en una api rest desarrollada con [Express JS](https://expressjs.com/es) como framawork web de [Node JS](https://nodejs.org/en/) y se usó [Mongo DB](https://www.mongodb.com/es/) como sistema de base de datos haciendo uso del ODM [Mongoose](https://mongoosejs.com/).
+El backend consite en una api rest desarrollada con [Express JS](https://expressjs.com/es) como framawork web de [Node JS](https://nodejs.org/en/) y se usó [Mongo DB](https://www.mongodb.com/es/) como sistema de base de datos haciendo uso del ODM [Mongoose](https://mongoosejs.com/).
 
 ### Módulos utilizados
 
@@ -58,23 +61,23 @@ Se tiene que utilizar las tecnologías React/NodeJs o Python/Django. Siéntete l
 
 ## Frontend
 
-    El frontend se desarrolló con la libreria javascript para la creación de interfases de usuario [React JS](https://es.reactjs.org/).
+El frontend se desarrolló con la libreria javascript para la creación de interfases de usuario [React JS](https://es.reactjs.org/).
 
 ### Módulos utilizados
 
-    - ag-grid-react: v26.0.0, datatable que permite el trabajo con tablas de manera mas rapida
-    - axios: v0.21.1, para consumir nuetra nuestra api
-    - bootstrap: v5.1.0, para la creación de nuestras vistas
-    - bootstrap-icons: v1.5.0, para la utilizacion de iconos
-    - date-fns : v2.23.0, para el trabajo con las fechas
-    - react-bootstrap: v1.6.1, para la creacion de las vistas
-    - react-reveal: v1.2.2, para los efectos de animación
-    - react-router-dom: v5.2.0, para el manejo de las rutas
-    - react-toastify: v7.0.4, para el manejo de mensajes
-    - react-tooltip: v4.2.21, para el mejor entendimiento de la aplicación
-    - redux: v4.1.1", para el manejo de el estado global de nuestra aplicación
-    - redux-saga: v1.1.3, como middleware de redux
-    - validator: v13.6.0v, para el trabajo con las validaciones en formularios
+- ag-grid-react: v26.0.0, datatable que permite el trabajo con tablas de manera mas rapida
+- axios: v0.21.1, para consumir nuetra nuestra api
+- bootstrap: v5.1.0, para la creación de nuestras vistas
+- bootstrap-icons: v1.5.0, para la utilizacion de iconos
+- date-fns : v2.23.0, para el trabajo con las fechas
+- react-bootstrap: v1.6.1, para la creacion de las vistas
+- react-reveal: v1.2.2, para los efectos de animación
+- react-router-dom: v5.2.0, para el manejo de las rutas
+- react-toastify: v7.0.4, para el manejo de mensajes
+- react-tooltip: v4.2.21, para el mejor entendimiento de la aplicación
+- redux: v4.1.1", para el manejo de el estado global de nuestra aplicación
+- redux-saga: v1.1.3, como middleware de redux
+- validator: v13.6.0v, para el trabajo con las validaciones en formularios
 
 ## Ejecutar projecto en local
 
@@ -120,5 +123,7 @@ cd gestion-universitaria
 npm install
 npm start
 ```
+
+Debe tener instalado mongoDB, debe de crear una carpeta con nombre data; en la partición del disco duro de su computadora donde tiene instaladado el sistema operativo y dentro de esta otra carpeta con nombre db, porque la base de datos es local.
 
 Después abra [http://localhost:3000](http://localhost:3000) para verlo en el navegador

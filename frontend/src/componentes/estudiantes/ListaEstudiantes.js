@@ -6,13 +6,13 @@ import { Button } from 'react-bootstrap'
 import { Zoom } from 'react-reveal'
 
 import ModalEstudiante from "./ModalEstudiante";
-import customHook from './useEstudiantes'
+import useEstudiantes from './useEstudiantes'
 import Spinner from "../Spinner";
 import NoResultados from '../NoResultados'
 import Error from '../Error'
 import TablaEstudiantes from "./TablaEstudiantes";
 
-function ListaEstudiantes() {
+export default function ListaEstudiantes() {
 
     const {
         estudiante,
@@ -26,7 +26,7 @@ function ListaEstudiantes() {
         notify,
         setState,
         state
-    } = customHook.useEstudiantes()
+    } = useEstudiantes()
 
     return (
         <>
@@ -91,4 +91,3 @@ function ListaEstudiantes() {
     );
 }
 
-export default ListaEstudiantes;
