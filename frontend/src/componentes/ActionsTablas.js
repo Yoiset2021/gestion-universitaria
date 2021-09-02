@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap'
 import ReactTooltip from 'react-tooltip'
+import PropTypes from 'prop-types'
 
 function ActionsTablas(props) {
 
@@ -30,6 +31,11 @@ function ActionsTablas(props) {
             </div>
         </Container>
     )
+}
+
+ActionsTablas.propTypes = {
+    onModalEditOpen: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
 }
 
 export default ActionsTablas
