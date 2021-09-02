@@ -50,14 +50,14 @@ El backend consite en una api rest desarrollada con [Express JS](https://express
 
 ### Módulos utilizados
 
--cors: v2.8.5 permite el intercambio de datos de los dos servidores
--date-fns: v2.23.0 permite el trabajo con fechas
--express: v4.17.1 framework web que permite el desarrollo de la api
--express-promise-router: v4.1.0 permite el manejo de las rutas
--mongoose: v5.13.8, permite el trabajo con los datos en la base de datos
--morgan: v1.10.0" middleware que permite la captura de solicitudes HTTP
--concurrently: v6.2.1" permite ejecutar los dos servidores en un solo script
--nodemon: v2.0.12" permite que se reinicie el servidor cada vez que se haga un cambio
+- cors: v2.8.5, permite el intercambio de datos de los dos servidores
+- date-fns: v2.23.0, permite el trabajo con fechas
+- express: v4.17.1, framework web que permite el desarrollo de la api
+- express-promise-router: v4.1.0, permite el manejo de las rutas
+- mongoose: v5.13.8, permite el trabajo con los datos en la base de datos
+- morgan: v1.10.0, middleware que permite la captura de solicitudes HTTP
+- concurrently: v6.2.1, permite ejecutar los dos servidores en un solo script
+- nodemon: v2.0.12, permite que se reinicie el servidor cada vez que se haga un cambio
 
 ## Frontend
 
@@ -123,6 +123,13 @@ cd gestion-universitaria
 npm install
 npm start
 ```
+
+## Vista al proyecto
+
+! [Estudiantes] (frontend/public/img/estudintes.jpg "Estudiantes")
+! [Grupos] (frontend/public/img/grupos.jpg "Grupos")
+
+## Nota
 
 Debe tener instalado mongoDB, debe de crear una carpeta con nombre data; en la partición del disco duro de su computadora donde tiene instaladado el sistema operativo y dentro de esta otra carpeta con nombre db, porque la base de datos es local.
 
