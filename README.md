@@ -126,8 +126,8 @@ npm start
 
 ## Vista al proyecto
 
-! [<img alt="Estudiantes" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/estudintes.jpg" width="60%" eigth="40%"/>]()
-! [Grupos](https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/grupos.jpg)
+! [<img alt="Estudiantes" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/estudintes.jpg" width="100%"/>]()
+! [<img alt="Grupos" src="https://github.com/Yoiset2021/gestion-universitaria/blob/master/frontend/public/img/grupos.jpg" width="100%"/>Grupos]()
 
 ## Nota
 
